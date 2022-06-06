@@ -1,0 +1,23 @@
+<button onclick="ff()">click me!</button>
+<script>
+function ff() {
+if (window.outerHeight==screen.height) {
+  alert("please exit fullscreen mode!")
+  location.reload()
+}
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault()
+    e.returnValue = ""
+
+});
+
+window.onmousemove = function (e) {
+  window.open("./test3", "_blank", "toolbar=yes,top="+String(Math.random()*1000)+",left="+String(Math.random()*1000)+",width=400,height=200");
+
+}
+window.onmouseclick = function (e) {
+  window.open("./test3", "_blank", "toolbar=yes,top="+String(Math.random()*1000)+",left="+String(Math.random()*1000)+",width=400,height=200");
+}
+}
+</script>
